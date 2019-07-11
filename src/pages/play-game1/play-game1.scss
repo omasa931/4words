@@ -1,0 +1,36 @@
+page-play-game1 {
+    .content_area {
+        background-image: url('../../assets/imgs/backimg.jpg');
+        background-size: cover;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+    }
+
+    // .q-area {
+    //     background-image: url('../../assets/imgs/qa_frame.png');
+    //     background-size: 90%;
+    //     background-repeat: no-repeat;
+    //     position: relative;
+    //     height: 60%;
+    // }
+
+    // .a-area {
+    //     position: relative;
+    //     height: 40%;
+    //     //background-color: #ddd;
+    //     display: flex;
+    // }
+
+    .qatd {
+        background-image: url('../../assets/imgs/qa_frame2.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .question {
+        font-size: 4.2rem
+    }
+}
+
+

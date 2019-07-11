@@ -1,0 +1,20 @@
+page-top {
+    .content_area {
+        background-image: url('../../assets/imgs/backimg2.png');
+        background-size: cover;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+    }
+
+    .title {
+      //font-size: 4.2rem
+      color:#1e90ff;
+      font-size: 6.3rem;
+    }
+    .title_td {
+      background-image: url('../../assets/imgs/title.png');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+  }
+}

@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <!--ion-title>
+      PlayGame1
+    </ion-title -->
+    <!-- ヘッダー共通処理 開始-->
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMoreModal()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!-- ヘッダー共通処理 終了-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <table border="0" width="100%" height="100%">
+      <tr class="qatd" height="60%"> 
+        <td align="center" valign="middle">
+          <ion-label>
+            <div class="question">{{qa1Data.question}}</div>
+          </ion-label>
+        </td>
+      </tr>
+      <tr height="40%">
+        <td valign="middle">
+          <button ion-item class="selectone" (click)="seletAnswer(1)">
+          １．{{qa1Data.select1}}
+          </button>
+          <button ion-item (click)="seletAnswer(2)">
+          ２．{{qa1Data.select2}}
+          </button>
+          <button ion-item (click)="seletAnswer(3)">
+            ３．{{qa1Data.select3}}
+          </button>
+            <button ion-item (click)="seletAnswer(4)">
+            ４．{{qa1Data.select4}}
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <!--form #f="ngForm" class="qa1Form" -->
+    <!--div class="content-area">
+    <div class="q-area">
+        {{qa1Data.question}}
+    </div>
+    <div class="a-area">
+      <table>
+      <tr>
+        <td>
+        <button ion-item (click)="seletAnswer(1)">
+          {{qa1Data.select1}}
+        </button>
+        <button ion-item (click)="seletAnswer(2)">
+          {{qa1Data.select2}}
+        </button>
+          <button ion-item (click)="seletAnswer(3)">
+          {{qa1Data.select3}}
+        </button>
+          <button ion-item (click)="seletAnswer(4)">
+          {{qa1Data.select4}}
+        </button>
+        </td>
+      </tr>
+    </table>
+    </div>
+  </div-->
+  <!-- /form -->
+</ion-content>
+
+

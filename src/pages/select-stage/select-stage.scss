@@ -1,0 +1,33 @@
+page-select-stage {
+    ion-card {
+        padding: 16px;
+        text-align: center;
+    }
+
+    // ion-content { 
+    //     background-image: url('../../assets/imgs/backimg2.png');
+    //     background-size: cover;
+    // } 
+
+    ion-col {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+    .submitBtn:hover{
+        /* 透明度を上げることで、画像の色を薄く見せる。*/
+        opacity:0.5;
+        /* リンクをホバーしたときのカーソルにする。*/
+        cursor: pointer;
+    }
+     
+    /* 画像をクリックした瞬間 */
+    .submitBtn:active{
+        /* 要素を若干下に下げることで、押した感じを出す。*/
+        /* 今いる位置から相対的に3px下に配置する。*/
+        position: relative;
+        top: 3px;
+     
+    }
+}

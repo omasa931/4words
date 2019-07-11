@@ -1,0 +1,14 @@
+page-more {
+    ion-content {
+        opacity: 0;
+      }
+      ion-footer {
+        background-color: #fff;
+        .semi-modal-content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 20px;
+        }
+      }
+}

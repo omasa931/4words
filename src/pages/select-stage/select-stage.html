@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <!--ion-title>
+      select stage
+    </ion-title -->
+    <!-- ヘッダー共通処理 開始-->
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMoreModal()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!-- ヘッダー共通処理 終了-->
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <!-- div align="center">{{playmode}}</div -->
+<ion-list>
+  <button ion-item *ngFor="let s of stagedatas" (click)="playGame(s)">
+    <ion-avatar item-start>
+      <img src='../../assets/icon/icon_lily.png'>
+    </ion-avatar>
+    <h3>{{s.noj}}．{{s.stagetitle}}</h3>
+    <p>{{s.highScore}}　{{s.clearTime}}</p>
+  </button><BR>
+</ion-list>
+<!--
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <ion-card>
+          <button class="submitBtn" (click)="playGame()" type="button" ion-button block round>stage1</button>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card>
+          <button class="submitBtn" (click)="playGame()" type="button" ion-button block round>stage2</button>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card>
+          <button class="submitBtn" (click)="playGame()" type="button" ion-button block round>stage3</button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        <ion-card>
+          <button class="submitBtn" (click)="playGame()" type="button" ion-button block round>stage4</button>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card>
+          <button class="submitBtn" (click)="playGame()" type="button" ion-button block round>stage5</button>
+        </ion-card>
+      </ion-col>
+      <ion-col col-4>
+        <ion-card>
+          <button class="submitBtn" (click)="playGame()" type="button" ion-button block round>stage6</button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  -->
+</ion-content>

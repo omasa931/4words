@@ -1,0 +1,16 @@
+<ion-content no-bounce>
+<ion-list radio-group [(ngModel)]="playmode">
+  <ion-item>
+    <ion-label>文字当てモード</ion-label>
+    <ion-radio value="1" checked (ionSelect)="showSelectData()"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>読み方当てモード</ion-label>
+    <ion-radio value="2" checked (ionSelect)="showSelectData()"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>意味当てモード</ion-label>
+    <ion-radio value="3" checked (ionSelect)="showSelectData()"></ion-radio>
+  </ion-item>
+</ion-list>
+</ion-content>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "136195078138",
+    "firebase_url": "https://words-f6997.firebaseio.com",
+    "project_id": "words-f6997",
+    "storage_bucket": "words-f6997.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136195078138:android:cbf2e824c9a906e5",
+        "android_client_info": {
+          "package_name": "jp.masa_lab.fourwords"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136195078138-bdgeop9tb2dqekk3ofpgd9lv7ql54a8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7b-byMG4px3XSxNDiuqaDFwUcEA0P_vY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136195078138-bdgeop9tb2dqekk3ofpgd9lv7ql54a8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
