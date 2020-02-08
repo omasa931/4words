@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController , PopoverController} from 'ionic-angular';
 import { ResultPage } from './../result/result';
 import { HttpClient } from '@angular/common/http';
-import { ModeSelectPage } from './../mode-select/mode-select';
 import 'rxjs/add/operator/map';
 import { CommonLogicProvider } from './../../providers/common-logic/common-logic';
 
 import { qa1 } from "../../app/models/qa1";
+import * as constant from '../../constant';
 
 
 @IonicPage()
@@ -75,6 +75,7 @@ export class PlayGame1Page {
 
   ionViewDidLoad() {
     console.log("PlayGame1Page.ionViewDidLoad");
+    this.commonlogic.showAddmobBanner(constant.ADMOB_BANNER_PLAY1);
   }
 
   ionViewWillEnter() {
@@ -130,7 +131,6 @@ export class PlayGame1Page {
     this.qa1Data.select4 = this.qa1Datas[prm_qano].select4;
     this.qa1Data.right = this.qa1Datas[prm_qano].right;
     this.qa1Data.mean = this.qa1Datas[prm_qano].mean;
-    
   }
 
   seletAnswer(selectno: string){
@@ -186,7 +186,8 @@ export class PlayGame1Page {
               currentStage: this.currentStage,
               correctNum: this.correct,
               totalNum: this.qa1Datas.length,
-              clearTime: this.clearTime
+              clearTime: this.clearTime,
+              mode: constant.MODE1
             });
         // 次の問題
         } else {
@@ -198,12 +199,12 @@ export class PlayGame1Page {
     modal.present();
   }
 
-  presentPopover(event) {
-    const popover = this.popoverCtrl.create(ModeSelectPage, {},  {cssClass: 'custom-popover'});
-    popover.present({
-      ev: event
-    });
-  }
+//  presentPopover (event) {
+//     const popover = this.popoverCtrl.create(ModeSelectPage, {},  {cssClass: 'custom-popover'});
+//     popover.present({
+//       ev: event
+//     });
+//   }
 
   /**
    * モーダル（moreページ）の表示

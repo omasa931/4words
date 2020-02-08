@@ -1,3 +1,15 @@
 page-play-game2 {
+    .qatd {
+        background-image: url('../../assets/imgs/backimg3.png');
+        //background-size: 120% 120%;
+        background-size: cover;
+        overflow: hidden;
+        background-repeat: no-repeat;
+    }
 
+    .question {
+        font-size: 4.2rem
+    }
 }
+
+

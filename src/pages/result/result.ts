@@ -6,6 +6,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { TopPage } from './../top/top';
 import { SelectStagePage } from './../select-stage/select-stage';
 import { PlayGame1Page } from './../play-game1/play-game1';
+import { PlayGame2Page } from './../play-game2/play-game2';
 import * as constant from '../../constant';
 import { Storage } from '@ionic/storage';
 import { stageresult } from './../../app/models/stageresult';
@@ -29,6 +30,8 @@ export class ResultPage {
   modeAndstg: string
   //実行結果
   sr: stageresult
+  //モード
+  mode: string
 
   constructor(
     public navCtrl: NavController,
@@ -49,17 +52,26 @@ export class ResultPage {
       clearTime: navParams.data.clearTime,
       hightScore: navParams.data.correctNum
     } 
+    //モード
+    this.mode = navParams.data.mode;
   }
 
-
+  ionViewWillEnter() {
+    console.log("ResultPage.ionViewWillEnter");
+    var random = this.getRandom();
+    //console.log("random:" + random);
+    if  (random = 1) {
+      this.commonlogic.showAddmobInterstitial(constant.ADMOB_INTERSTITIAL);
+    }
+  }
   ionViewDidEnter() {
     console.log("ResultPage.ionViewDidEnter");
-    //ステージクリア情報を登録、更新するためのキー
-    this.storage.get("mode").then(result => {
-      this.modeAndstg = result + "_" +this.currentStage
 
-      //strageから取得
-      this.storage.get(this.modeAndstg)
+    //ステージクリア情報を登録、更新するためのキー
+    this.modeAndstg = this.mode + "_" +this.currentStage
+    //console.log("this.modeAndstg:"+ this.modeAndstg);
+    //strageから取得
+    this.storage.get(this.modeAndstg)
       .then(result=>{
         // 値が取得できない場合
         if (result == null) {
@@ -84,9 +96,12 @@ export class ResultPage {
       })
       .catch(//err=>{
         //console.log("err");
-      //}
       );
-    })
+  }
+
+  ionViewDidLoad() {
+    console.log("result.ionViewDidLoad");
+    this.commonlogic.showAddmobBanner(constant.ADMOB_BANNER_RESULT);
   }
 
   //トップへ戻る
@@ -98,7 +113,7 @@ export class ResultPage {
   //ステージ選択
   toSelectStage() {
     console.log("ResultPage.toSelectStage");
-    this.navCtrl.push(SelectStagePage);
+    this.navCtrl.push(SelectStagePage, {mode: this.mode});
   }
   //リトライ
   retry() {
@@ -111,10 +126,18 @@ export class ResultPage {
     console.log("ResultPage.toNext");
 
     if (parseInt(this.currentStage) < constant.MAX_STAGE) {
-      this.navCtrl.push(PlayGame1Page,
-        {
-          currentStage: this.currentStage + 1
-        });
+
+      if (this.mode == constant.MODE1) {
+        this.navCtrl.push(PlayGame1Page,
+          {
+            currentStage: this.currentStage + 1
+          });
+      } else {
+        this.navCtrl.push(PlayGame2Page,
+          {
+            currentStage: this.currentStage + 1
+          });
+      }
     }
   }
 
@@ -124,5 +147,10 @@ export class ResultPage {
   showMoreModal() {
     console.log('SelectStagePage.showMoreModal()');
     this.commonlogic.showMoreModal()
+  }
+
+  //インタースティシャル制御用の乱数
+  getRandom() {
+    return Math.floor(Math.random() * Math.floor(constant.MATH_RANDOM_MAX));
   }
 }

@@ -23,19 +23,20 @@
       </tr>
       <tr height="50%">
         <td align="center" valign="middle">
-          <!--a href="#" class="btn-circle-border-double"  (click)="toSelectStage()">
-            クイズスタート
-          </a -->
-
           <BR>
-          <button ion-button block [color]="myColor" [large]="isLarge" [outline]="isOutline" (click)="toSelectStage()">
-            <B>スタート</B>
+          <button ion-button block [color]="myColor" [large]="isLarge" [outline]="isOutline" (click)="toSelectStage(1)">
+            <B>四　択　ク　イ　ズ</B>
+          </button>
+          <BR>
+          <button ion-button block [color]="myColor" [large]="isLarge" [outline]="isOutline" (click)="toSelectStage(2)">
+            <B>読　み　方　ク　イ　ズ</B>
           </button>
           <BR>
         </td>
       </tr>
       <tr height="15%">
         <td valign="middle" align="center">
+
         </td>
       </tr>
     </table>

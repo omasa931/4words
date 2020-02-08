@@ -30,12 +30,12 @@ export class TopPage {
   }
 
   ionViewDidLoad() {
-    this.commonlogic.showAddmobBanner(constant.ADMOB_BANNER);
+    this.commonlogic.showAddmobBanner(constant.ADMOB_BANNER_TOP);
   }
 
-  toSelectStage() {
+  toSelectStage(p_mode: string) {
     console.log("ResultPage.toTop");
-    this.navCtrl.push(SelectStagePage);
+    this.navCtrl.push(SelectStagePage, {mode: p_mode});
   }
 
   /**

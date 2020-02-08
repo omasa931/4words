@@ -13,7 +13,10 @@ export class AnswerModalPage {
   reading: string ='';
   mean: string = '';
   okng: string = '';
-
+  mean1: string = ' ';
+  mean2: string = ' ';
+  mean3: string = ' ';
+  
   constructor(
     public viewCtrl: ViewController,
     public navParams: NavParams,
@@ -21,8 +24,13 @@ export class AnswerModalPage {
 
     this.fourwords = navParams.data.fourwords;
     this.reading = navParams.data.reading;
-    this.mean = navParams.data.mean;
     this.okng = navParams.data.okng;
+    this.mean = navParams.data.mean;
+    var meanval = navParams.data.mean;
+
+    this.mean1 = meanval.slice(0, 12);
+    this.mean2 = meanval.slice(12, 24);
+    this.mean3 = meanval.slice(24);
 
     this.backdrop.show(this.okng);
   }

@@ -15,10 +15,8 @@ import { PlayGame3Page } from './../pages/play-game3/play-game3';
 import { ResultPage } from './../pages/result/result';
 import { MorePage } from './../pages/more/more';
 import { PrivacypolicyPage } from './../pages/privacypolicy/privacypolicy';
-import { ModeSelectPage } from './../pages/mode-select/mode-select';
 import { CommonLogicProvider } from '../providers/common-logic/common-logic';
 import { Backdrop2Provider } from   '../providers/backdrop2/backdrop2';
-import { SettingProvider } from '../providers/setting/setting';
 import { BackdropProvider } from '../providers/backdrop/backdrop';
 import { HttpClientModule } from '@angular/common/http';
 import { AdMobFree } from '@ionic-native/admob-free';
@@ -34,12 +32,14 @@ import { AdMobFree } from '@ionic-native/admob-free';
     ResultPage,
     MorePage,
     PrivacypolicyPage,
-    ModeSelectPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+         driverOrder: ['indexeddb', 'sqlite', 'websql']
+    }),
     HttpClientModule
   ],
   bootstrap: [IonicApp],
@@ -53,7 +53,6 @@ import { AdMobFree } from '@ionic-native/admob-free';
     ResultPage,
     MorePage,
     PrivacypolicyPage,
-    ModeSelectPage
   ],
   providers: [
     StatusBar,
@@ -61,7 +60,6 @@ import { AdMobFree } from '@ionic-native/admob-free';
     AdMobFree,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CommonLogicProvider,
-    SettingProvider,
     BackdropProvider,
     Backdrop2Provider
   ]

@@ -1,18 +1,50 @@
-<!--
-  Generated template for the PlayGame2Page page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>PlayGame2Page</ion-title>
+    <!--ion-title>
+      PlayGame1
+    </ion-title -->
+    <!-- ヘッダー共通処理 開始-->
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showMoreModal()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!-- ヘッダー共通処理 終了-->
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-
+    <table border="0" width="100%" height="0%">
+      <tr class="" height="0%"> 
+        <td align="left" valign="middle">
+          【 {{qanoView}}/{{qaAll}} 】
+        </td>
+      </tr>
+      <tr class="qatd" height="0%"> 
+        <td align="center" valign="middle">
+          <ion-label>
+            <div class="question">{{qa1Data.fourwords}}</div>
+          </ion-label>
+        </td>
+      </tr>
+      <tr height="0%">
+        <td valign="middle">
+          <form #f="ngForm" name="form">
+            <ion-list class="inputBlock">
+              <ion-item padding class="textBlock">
+                <ion-label floating>回答を入力してください</ion-label>
+                <ion-input [(ngModel)]="answer" required
+                            type="text" name="answer" ></ion-input>
+              </ion-item>
+              <button (click)="answerQuestion()" type="submit"
+                [disabled]="!f.form.valid" block
+                class="submit" ion-button>回答する</button>
+            </ion-list>
+          </form>
+          <BR>
+        </td>
+      </tr>
+    </table>
 </ion-content>
+
+
